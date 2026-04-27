@@ -136,8 +136,6 @@ def train(args):
     dtype = ptdtype[args.dtype]
     ctx = (
         nullcontext()
-        if args.device == "cpu"
-        else torch.amp.autocast(device_type=args.device, dtype=dtype)
     )
     if args.wandb_log:
         import wandb
